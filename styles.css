@@ -1,11 +1,135 @@
 body{
-    background-color: black;
-    align-items:center;
-  }
+  background-color: #191825;
+  margin:0;
+  padding:0;
+  font-family: helvetica, sans-serif;
+  align-items: center;
+  margin-left: 10rem;
+
+}
   
-  h1{
-    color:white;
-    font-size:5rem;
-    font-family: "Space Mono", monospace;
-    align-items:center;
-  }
+h2{
+  color:#865DFF;
+  font-size:5rem;
+  align-items:center;
+  margin-bottom: 2rem;
+  margin-left: 10rem;
+}
+
+h3{
+  color: #865DFF;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+section {
+  margin: 2rem;
+  color: #F4EEE0;
+}
+
+#menu{
+  height: 100vh;
+    width: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+#menu-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: #F4EEE0;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-item {
+  white-space: nowrap;
+}
+
+#menu.menu-open {
+  width: 100%;
+}
+
+#menu.menu-open #menu-items {
+  opacity: 1;
+  transform: translateX(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 2;
+}
+#menu-items{
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 2;
+}
+
+#menu-items:hover > .menu-item{
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+#menu-background-pattern{
+  height: 150vh;
+  width: 100vw;
+  
+  background-image:radial-gradient(
+    rgba(227,132,255,0.1) 9%,
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  
+  transition: opacity 800ms ease,
+    background-size 800ms ease;
+
+}
+
+#menu-items:hover ~ #menu-background-pattern{
+  background-size: 11vmin 11vmin;
+  opacity: 0.5;
+}
+
+section {
+  margin: 2rem 5rem;
+  color: #F4EEE0;
+  align-items: center;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #2C2A3F;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.project-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.work-experience-list, .skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.work-experience-item, .skills-item {
+  margin-bottom: 1rem;
+}
